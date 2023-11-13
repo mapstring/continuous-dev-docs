@@ -90,6 +90,32 @@ nil
 }
 ```
 
+### PUT /users/:id
+
+Updates a user account (email, password) (204) or returns 404.
+
+#### Params
+
+```
+id: user account UUID
+```
+
+#### Request
+
+```json
+{
+	"email": "new@email.tld",
+	"password": "new-password",
+	"password_confirm": "new-password-confirmation"
+}
+```
+
+#### Response 
+
+```
+no content
+```
+
 ### POST /sessions
 
 Creates a new session to sign in the user. Returns a JWT token.
@@ -110,3 +136,4 @@ Creates a new session to sign in the user. Returns a JWT token.
   "token": "...."
 }
 ```
+
