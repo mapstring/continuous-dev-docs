@@ -137,3 +137,41 @@ Creates a new session to sign in the user. Returns a JWT token.
 }
 ```
 
+### POST /passwords/reset
+
+Send an reset password notice to the user. Either 204 or 404 as response code.
+
+#### Request
+
+```json
+{
+  "email": "email@domain.tld"
+}
+```
+
+#### Response
+
+```
+204 No Content
+```
+
+### POST /passwords
+
+Creates a new password for the selected email, validating a recovery token. Either 204 or 404.
+
+#### Request
+
+```json
+{
+  "email": "email@domain.tld",
+  "password": "new-password",
+  "password_confirm": "new-password-confirmation",
+  "token": "one-usage token sent by email"
+}
+```
+
+#### Response
+
+```
+204 No Content
+```
